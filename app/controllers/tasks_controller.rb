@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+    request.variant = :mobile if request.user_agent =~ /iPhone/
   end
 
   # GET /tasks/1
